@@ -6,10 +6,10 @@
 **Checksum.java** 
 * usage
 ```javascript
-Checksum.digest(Checksum.Algorithm.MD5, "hello world".getBytes();
-Checksum.digest(Checksum.Algorithm.SHA_1, "hello world".getBytes();
-Checksum.digest(Checksum.Algorithm.SHA_256, "hello world".getBytes();
-Checksum.digest(Checksum.Algorithm.SHA_512, "hello world".getBytes();
+Checksum.digest(Checksum.Algorithm.MD5, "hello world".getBytes());
+Checksum.digest(Checksum.Algorithm.SHA_1, "hello world".getBytes());
+Checksum.digest(Checksum.Algorithm.SHA_256, "hello world".getBytes());
+Checksum.digest(Checksum.Algorithm.SHA_512, "hello world".getBytes());
 ```
 
 \
