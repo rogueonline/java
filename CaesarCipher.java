@@ -11,7 +11,7 @@ public class CaesarCipher {
 	 * 
 	 * @throws IllegalArgumentException
 	 */
-	public static String encrypt(String string, int offset) throws IllegalArgumentException {
+	public static synchronized String encrypt(String string, int offset) throws IllegalArgumentException {
 		if ((offset < 0) || (offset > 25)) {
 			throw new IllegalArgumentException("Offset must be between 0-25");
 		}
@@ -50,7 +50,7 @@ public class CaesarCipher {
 	 * 
 	 * @throws IllegalArgumentException
 	 */
-	public static String decrypt(String string, int offset) throws IllegalArgumentException {
+	public static synchronized String decrypt(String string, int offset) throws IllegalArgumentException {
 		if ((offset < 0) || (offset > 25)) {
 			throw new IllegalArgumentException("Offset must be between 0-25");
 		}
