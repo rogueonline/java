@@ -9,7 +9,7 @@ public class VigenereCipher {
 	 * 
 	 * @return
 	 */
-	public String encrypt(String string, String key) {
+	public static String encrypt(String string, String key) {
 		StringBuilder stringBuilder = new StringBuilder("");
 		
 		int j = 0;
@@ -49,7 +49,7 @@ public class VigenereCipher {
 	 * 
 	 * @return
 	 */
-	public String decrypt(String string, String key) {
+	public static String decrypt(String string, String key) {
 		StringBuilder stringBuilder = new StringBuilder("");
 		
 		int j = 0;
