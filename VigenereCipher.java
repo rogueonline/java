@@ -5,21 +5,21 @@ public class VigenereCipher {
 
 	/**
 	 * @param string to encrypt
-	 * @param password
+	 * @param key
 	 * 
 	 * @return
 	 */
-	public static synchronized String encrypt(String string, String password) {
+	public static synchronized String encrypt(String string, String key) {
 		StringBuilder stringBuilder = new StringBuilder("");
 
 		string = string.replaceAll(" ", "").toUpperCase();
-		password = password.replaceAll(" ", "").toUpperCase();
+		key = key.replaceAll(" ", "").toUpperCase();
 
 		int j = 0;
 		for (int i = 0; i < string.length(); i++) {
 			int stringIndex = alphabet.indexOf(string.charAt(i));
-			int passwordIndex = alphabet.indexOf(password.charAt(j));
-			int offset = stringIndex + passwordIndex;
+			int keyIndex = alphabet.indexOf(key.charAt(j));
+			int offset = stringIndex + keyIndex;
 
 			if (offset >= alphabet.length()) {
 				offset -= alphabet.length();
@@ -33,7 +33,7 @@ public class VigenereCipher {
 			stringBuilder.append(alphabet.charAt(offset));
 			j++;
 
-			if (j >= password.length()) {
+			if (j >= key.length()) {
 				j = 0;
 			}
 		}
@@ -46,21 +46,21 @@ public class VigenereCipher {
 	
 	/**
 	 * @param string to decrypt
-	 * @param password
+	 * @param key
 	 * 
 	 * @return
 	 */
-	public static synchronized String decrypt(String string, String password) {
+	public static synchronized String decrypt(String string, String key) {
 		StringBuilder stringBuilder = new StringBuilder("");
 
 		string = string.replaceAll(" ", "").toUpperCase();
-		password = password.replaceAll(" ", "").toUpperCase();
+		key = key.replaceAll(" ", "").toUpperCase();
 
 		int j = 0;
 		for (int i = 0; i < string.length(); i++) {
 			int stringIndex = alphabet.indexOf(string.charAt(i));
-			int passwordIndex = alphabet.indexOf(password.charAt(j));
-			int offset = stringIndex - passwordIndex;
+			int keyIndex = alphabet.indexOf(key.charAt(j));
+			int offset = stringIndex - keyIndex;
 
 			if (offset < 0) {
 				offset += alphabet.length();
@@ -74,7 +74,7 @@ public class VigenereCipher {
 			stringBuilder.append(alphabet.charAt(offset));
 			j++;
 
-			if (j >= password.length()) {
+			if (j >= key.length()) {
 				j = 0;
 			}
 		}
